@@ -9,6 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "midiProcessor.h"
 
 //==============================================================================
 /**
@@ -54,6 +55,7 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
 private:
+    MidiProcessor midiProcessor; // Declared privately, since it is only going to be called within the PluginProcessor.cpp shit. It's internal.
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Midi_effectsAudioProcessor)
 };
