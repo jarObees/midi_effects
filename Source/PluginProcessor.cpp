@@ -132,7 +132,7 @@ bool Midi_effectsAudioProcessor::isBusesLayoutSupported (const BusesLayout& layo
 void Midi_effectsAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
     buffer.clear();
-    midiProcessor.process(midiMessages); // Linked to the midi processor class to process and do our tang.
+    midiProcessor.process(midiMessages, harmInterval); // Linked to the midi processor class to process and do our tang.
 }
 
 //==============================================================================

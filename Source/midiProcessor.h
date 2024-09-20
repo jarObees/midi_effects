@@ -5,7 +5,7 @@
 class MidiProcessor
 {
 public:
-	void process(juce::MidiBuffer& midiMessages)
+	void process(juce::MidiBuffer& midiMessages, float& harmInterval)
 	{
 		processedBuffer.clear();
 
@@ -18,7 +18,7 @@ public:
 				auto harmMessage = currentMessage;
 				
 				auto oldNoteNum = harmMessage.getNoteNumber();
-				harmMessage.setNoteNumber(oldNoteNum + interval);
+				harmMessage.setNoteNumber(oldNoteNum + harmInterval);
 
 				processedBuffer.addEvent(harmMessage, samplePos);
 			}

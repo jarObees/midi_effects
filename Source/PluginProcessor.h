@@ -54,6 +54,8 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
+    float harmInterval;
+
 private:
     MidiProcessor midiProcessor; // Declared privately, since it is only going to be called within the PluginProcessor.cpp shit. It's internal.
     //==============================================================================
